@@ -25,7 +25,7 @@ body {
   gap: 1.5rem;
   padding: 1.5rem;
   background-image: linear-gradient(
-    hsla(252, 100%, 67%, 1.1),
+    hsl(252, 100%, 67%),
     hsl(241, 81%, 54%)
   );
   border-radius: 0 0 2rem 2rem;
