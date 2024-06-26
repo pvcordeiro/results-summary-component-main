@@ -5,15 +5,15 @@
 }
 
 body {
-  font-family: "Hanken Grotesk", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: "Hanken Grotesk";
+  font-weight: normal;
   max-width: 100%;
 }
 
 .container {
   background-color: hsl(0, 0%, 100%);
   max-width: 100%;
+  font-size: 1.1rem;
   display: flex;
   flex-direction: column;
 }
@@ -22,33 +22,36 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
   background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
   border-radius: 0 0 2rem 2rem;
 }
+
 .title {
-  color: hsla(241, 100%, 89%, 1);
+  color: hsla(241, 100%, 89%, 0.9);
   font-weight: 700;
-  font-size: 1.2rem;
   text-align: center;
-  padding: 0.5rem;
+  font-size: 18px;
 }
+
 .circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
   background-image: linear-gradient(
     hsla(256, 72%, 46%, 1),
     hsla(241, 72%, 46%, 0)
   );
-  border-radius: 50%;
-  overflow: hidden;
-  width: 9rem;
-  height: 9rem;
-  text-align: center;
-  padding: 1.5rem;
 }
+
 .score {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: hsl(0, 0%, 100%);
 }
 
@@ -56,44 +59,49 @@ body {
   font-size: 1rem;
   color: hsla(241, 100%, 89%, 0.6);
 }
+
 .rating {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: hsl(0, 0%, 100%);
   text-align: center;
+  line-height: 1;
 }
-.p {
+
+p {
   font-size: 1rem;
-  color: hsla(241, 100%, 89%, 0.8);
+  color: hsla(241, 100%, 89%, 0.9);
   font-weight: 500;
   text-align: center;
-  padding: 0 2rem 1rem;
+  padding: 0 1rem 1rem;
+  margin-top: -0.8rem;
 }
+
 .summarycontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .summary {
-  font-weight: 400;
-  font-size: 0.6rem;
+  font-weight: 700;
+  font-size: 1.2rem;
   color: hsla(0, 0%, 0%, 0.7);
 }
+
 ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 li {
   font-weight: 600;
   border-radius: 1rem;
   font-size: 1rem;
-  list-style: none;
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -108,6 +116,7 @@ li::before {
 .all {
   margin-left: auto;
 }
+
 .number {
   color: black;
   font-weight: 600;
@@ -121,8 +130,6 @@ li::before {
 .reaction {
   background-color: hsla(0, 100%, 67%, 0.06);
   color: hsla(0, 100%, 67%, 0.8);
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 
@@ -133,8 +140,6 @@ li::before {
 .memory {
   background-color: hsla(39, 100%, 56%, 0.06);
   color: hsla(39, 100%, 56%, 0.8);
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 
@@ -145,8 +150,6 @@ li::before {
 .verbal {
   background-color: hsla(166, 100%, 37%, 0.06);
   color: hsla(166, 100%, 37%, 0.8);
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 
@@ -157,8 +160,6 @@ li::before {
 .visual {
   background-color: hsla(234, 85%, 45%, 0.06);
   color: hsla(234, 85%, 45%, 0.8);
-  display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 
@@ -169,10 +170,11 @@ li::before {
 .continue {
   background-color: hsl(224, 30%, 27%);
   color: hsla(0, 0%, 100%, 0.8);
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   border-radius: 2rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  font-size: 18px;
 }
 
 .attribution {
@@ -188,54 +190,60 @@ li::before {
 }
 
 @media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
   .container {
+    width: 670px;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
   }
   .resultcontainer {
-    padding: 2rem;
     width: 50%;
     border-radius: 2rem;
     gap: 1.5rem;
+    padding: 2rem;
   }
 
   .title {
-    color: hsla(241, 100%, 89%, 0.9);
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 0;
+    font-size: 1.5rem;
   }
   .circle {
+    width: 12rem;
+    height: 12rem;
+  }
+  .score {
+    font-size: 4rem;
   }
   .rating {
-    padding: 0;
+    padding-top: 1rem;
+    font-size: 2rem;
   }
-  .p {
-    color: hsla(241, 100%, 89%, 0.8);
-    padding: 1rem 1rem;
-    font-weight: 500;
-    text-align: center;
+  p {
+    padding: 0 1.5rem 1rem;
+    margin-top: 0;
   }
   .summarycontainer {
+    gap: 2rem;
+    padding: 2rem;
     width: 50%;
     border-radius: 0 2rem 2rem 0;
     box-shadow: 5px 5px 15px hsla(241, 100%, 89%, 0.5);
   }
   .summary {
+    font-size: 1.5rem;
   }
 
   ul {
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 1rem;
     border-radius: 1rem;
     font-size: 1rem;
-  }
-
-  .continue {
-    padding: 0.9rem;
+    gap: 1rem;
   }
   .attribution {
     margin: auto;
